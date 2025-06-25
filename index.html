@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura de Luxe</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #c59fc9;
+      --secondary: #fff8f0;
+      --accent: #3d3d3d;
+      --hover: #ffd6e0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/sparkle.gif') repeat;
+      opacity: 0.03;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px 40px;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--hover);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--hover);
+      text-shadow: 0 0 8px var(--hover);
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #c59fc9;
+      padding: 10px 12px;
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1000;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .scroll-top:hover {
+      transform: scale(1.2);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px 60px;
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      animation: fadeIn 2s ease;
+    }
+
+    .categories {
+      padding: 40px 20px;
+      background: white;
+      border-radius: 20px;
+      margin: 0 40px 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .categories h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .tab-link {
+      padding: 10px 20px;
+      border: none;
+      background-color: #c59fc9;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .tab-link:hover,
+    .tab-link.active {
+      background-color: #9a73a6;
+      transform: scale(1.05);
+    }
+
+    .product-grid-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .product p {
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+
+    .add-to-cart {
+      padding: 8px 16px;
+      background: #c59fc9;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background: #9a73a6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .view-all-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 16px;
+      background-color: #c59fc9;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .view-all-btn:hover {
+      background-color: #9a73a6;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll-to-top Button -->
+  <div class="scroll-top" id="scrollTopBtn">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <header>
+    <div class="logo">Aura de Luxe</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Sign Up</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>Luxury Perfumes for Every Occasion</h1>
+    <p>Discover the fragrance that defines you</p>
+  </section>
+
+  <section class="categories" data-aos="zoom-in">
+    <h2>Shop by Category</h2>
+    <div class="category-tabs">
+      <button class="tab-link" data-category="men">Men</button>
+      <button class="tab-link" data-category="women">Women</button>
+      <button class="tab-link" data-category="unisex">Unisex</button>
+      <button class="tab-link" data-category="children">Children</button>
+    </div>
+
+    <div class="product-grid-wrapper">
+  <!-- MEN -->
+  <div class="product-grid" id="men">
+    <!-- First 2 perfumes -->
+    <div class="product">
+      <img src="images/men1.webp" alt="Spice Royale">
+      <h3>Spice Royale</h3>
+      <p>$85.00</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="images/men2.jpg" alt="Ocean Drive">
+      <h3>Ocean Drive</h3>
+      <p>$92.00</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Hidden extra products -->
+    <div class="extra-products hidden">
+      <div class="product"><img src="images/men3.jpeg" alt="Bold Night"><h3>Bold Night</h3><p>$88.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men4.jpeg" alt="Cedar Rush"><h3>Cedar Rush</h3><p>$80.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men5.jpeg" alt="Midnight Spice"><h3>Midnight Spice</h3><p>$90.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men6.jpeg" alt="Royal Vetiver"><h3>Royal Vetiver</h3><p>$95.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men7.jpeg" alt="Amber Depth"><h3>Amber Depth</h3><p>$89.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men8.jpeg" alt="Classic Leather"><h3>Classic Leather</h3><p>$93.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men9.jpg" alt="Frost Woods"><h3>Frost Woods</h3><p>$82.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men10.jpeg" alt="Night Bloom"><h3>Night Bloom</h3><p>$87.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men11.jpeg" alt="Urban Musk"><h3>Urban Musk</h3><p>$86.00</p><button class="add-to-cart">Add to Cart</button></div>
+      <div class="product"><img src="images/men12.jpeg" alt="Sandal Rush"><h3>Sandal Rush</h3><p>$94.00</p><button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div style="text-align: center; margin-top: 10px;">
+      <a class="view-all-btn" href="category.html?category=men">
+        + View All Men Perfumes <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div class="product-grid hidden" id="women">
+  <!-- First 2 visible products -->
+  <div class="product">
+    <img src="images/women1.webp" alt="Floral Whisper">
+    <h3>Floral Whisper</h3>
+    <p>$78.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="images/women2.jpeg" alt="Golden Glow">
+    <h3>Golden Glow</h3>
+    <p>$95.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <!-- Hidden extra products -->
+  <div class="extra-products hidden">
+    <div class="product"><img src="images/women3.jpeg" alt="Amber Rose"><h3>Amber Rose</h3><p>$82.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women4.jpeg" alt="Lily Bloom"><h3>Lily Bloom</h3><p>$79.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women5.jpeg" alt="Peach Blossom"><h3>Peach Blossom</h3><p>$85.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women6.webp" alt="Jasmine Dream"><h3>Jasmine Dream</h3><p>$88.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women7.jpeg" alt="Vanilla Kiss"><h3>Vanilla Kiss</h3><p>$83.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women8.jpeg" alt="Coconut Veil"><h3>Coconut Veil</h3><p>$87.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women9.jpeg" alt="Cherry Bloom"><h3>Cherry Bloom</h3><p>$86.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women10.jpeg" alt="Silk Petals"><h3>Silk Petals</h3><p>$91.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women11.jpeg" alt="Dusk Meadow"><h3>Dusk Meadow</h3><p>$93.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/women12.jpeg" alt="Soft Mirage"><h3>Soft Mirage</h3><p>$90.00</p><button class="add-to-cart">Add to Cart</button></div>
+  </div>
+
+  <!-- ✅ This is now inside the correct container -->
+  <div style="text-align: center; margin-top: 10px;">
+    <a class="view-all-btn" href="category.html?category=women">
+      + View All Women Perfumes <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>
+
+    <div class="product-grid hidden" id="unisex">
+    <div class="product">
+    <img src="images/unisex1.webp" alt="Mystic Oud">
+    <h3>Mystic Oud</h3>
+    <p>$110.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="images/unisex2.webp" alt="Velvet Sky">
+    <h3>Velvet Sky</h3>
+    <p>$99.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="extra-products hidden">
+    <div class="product"><img src="images/unisex3.webp" alt="Citrus Grove"><h3>Citrus Grove</h3><p>$89.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex4.jpeg" alt="Amber Drift"><h3>Amber Drift</h3><p>$94.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex5.jpeg" alt="Forest Mist"><h3>Forest Mist</h3><p>$86.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex6.jpeg" alt="Whisper Wood"><h3>Whisper Wood</h3><p>$88.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex7.webp" alt="Pure Musk"><h3>Pure Musk</h3><p>$90.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex8.webp" alt="Saffron Bliss"><h3>Saffron Bliss</h3><p>$92.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex9.jpeg" alt="Golden Horizon"><h3>Golden Horizon</h3><p>$95.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex10.jpeg" alt="Silken Sandal"><h3>Silken Sandal</h3><p>$98.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex11.jpeg" alt="Frost Ember"><h3>Frost Ember</h3><p>$91.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/unisex12.webp" alt="Moondust"><h3>Moondust</h3><p>$89.00</p><button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div style="text-align: center; margin-top: 10px;">
+    <a class="view-all-btn" href="category.html?category=unisex">
+    + View All Unisex Perfumes <i class="fas fa-arrow-right"></i>
+    </a>
+    </div>
+    </div>
+
+      <div class="product-grid hidden" id="children">
+        <div class="product">
+        <img src="images/children1.webp" alt="Bubble Berry">
+         <h3>Bubble Berry</h3>
+        <p>$45.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="images/children2.jpg" alt="Cotton Candy">
+    <h3>Cotton Candy</h3>
+    <p>$49.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="extra-products hidden">
+    <div class="product"><img src="images/children3.jpg" alt="Tiny Vanilla"><h3>Tiny Vanilla</h3><p>$42.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children4.webp" alt="Rainbow Drops"><h3>Rainbow Drops</h3><p>$46.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children5.jpeg" alt="Candy Cloud"><h3>Candy Cloud</h3><p>$44.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children6.jpg" alt="Toffee Splash"><h3>Toffee Splash</h3><p>$47.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children7.jpeg" alt="Lemon Fizz"><h3>Lemon Fizz</h3><p>$43.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children8.jpeg" alt="Magic Pop"><h3>Magic Pop</h3><p>$45.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children9.jpeg" alt="Fairy Mist"><h3>Fairy Mist</h3><p>$48.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children10.jpeg" alt="Berry Wink"><h3>Berry Wink</h3><p>$46.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children11.jpeg" alt="Blue Bubble"><h3>Blue Bubble</h3><p>$44.00</p><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product"><img src="images/children12.jpeg" alt="Vanilla Star"><h3>Vanilla Star</h3><p>$47.00</p><button class="add-to-cart">Add to Cart</button></div>
+  </div>
+
+    <div style="text-align: center; margin-top: 10px;">
+    <a  class="view-all-btn" href="category.html?category=children">
+    + View All Children Perfumes <i class="fas fa-arrow-right"></i>
+    </a>
+    </div>
+    </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Aura de Luxe. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS & Custom Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Tabs
+    const tabs = document.querySelectorAll('.tab-link');
+    const grids = document.querySelectorAll('.product-grid');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        grids.forEach(grid => {
+          grid.classList.toggle('hidden', grid.id !== tab.dataset.category);
+        });
+      });
+    });
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Aura de Luxe</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --primary: #c59fc9;
+      --secondary: #fff8f0;
+      --accent: #3d3d3d;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px 40px;
+      font-size: 1.2rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffd6e0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd6e0;
+    }
+
+    .categories {
+      padding: 60px 20px;
+      background: white;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .categories h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+    }
+
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .tab-link {
+      padding: 10px 20px;
+      border: none;
+      background-color: #c59fc9;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab-link:hover,
+    .tab-link.active {
+      background-color: #9a73a6;
+    }
+
+    .product-grid-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .product p {
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+
+    .add-to-cart {
+      padding: 8px 16px;
+      background: #c59fc9;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background: #9a73a6;
+    }
+
+    .view-all-btn {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px auto 40px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .extra-products.hidden {
+      display: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Aura de Luxe</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="categories" data-aos="fade-up">
+    <h2>Explore Our Collections</h2>
+    <div class="category-tabs">
+      <button class="tab-link active" data-category="men">Men</button>
+      <button class="tab-link" data-category="women">Women</button>
+      <button class="tab-link" data-category="unisex">Unisex</button>
+      <button class="tab-link" data-category="children">Children</button>
+    </div>
+
+    <div class="product-grid-wrapper">
+      <!-- INSERT MEN, WOMEN, UNISEX, CHILDREN CATEGORY GRIDS HERE -->
+      <!-- You can paste the previously structured product grids with .extra-products and view-all-btn buttons. -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aura de Luxe. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const tabs = document.querySelectorAll('.tab-link');
+    const grids = document.querySelectorAll('.product-grid');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        grids.forEach(grid => {
+          grid.classList.add('hidden');
+        });
+
+        const selectedGrid = document.getElementById(tab.dataset.category);
+        if (selectedGrid) selectedGrid.classList.remove('hidden');
+      });
+    });
+
+    function toggleExtraProducts(button) {
+      const extra = button.previousElementSibling;
+      const category = button.dataset.category || "Category";
+      extra.classList.toggle('hidden');
+
+      if (extra.classList.contains('hidden')) {
+        button.textContent = `+ View All ${category} Perfumes`;
+      } else {
+        button.textContent = `− View Less ${category} Perfumes`;
+      }
+    }
+  </script>
+</body>
+</html>

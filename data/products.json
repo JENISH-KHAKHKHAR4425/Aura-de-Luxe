@@ -1,0 +1,58 @@
+{
+  "men": [
+    { "name": "Spice Royale", "price": 85, "img": "images/men1.webp" },
+    { "name": "Ocean Drive", "price": 92, "img": "images/men2.jpg" },
+    { "name": "Bold Night", "price": 88, "img": "images/men3.jpeg" },
+    { "name": "Cedar Rush", "price": 80, "img": "images/men4.jpeg" },
+    { "name": "Midnight Spice", "price": 90, "img": "images/men5.jpeg" },
+    { "name": "Royal Vetiver", "price": 95, "img": "images/men6.jpeg" },
+    { "name": "Amber Depth", "price": 89, "img": "images/men7.jpeg" },
+    { "name": "Classic Leather", "price": 93, "img": "images/men8.jpeg" },
+    { "name": "Frost Woods", "price": 82, "img": "images/men9.jpg" },
+    { "name": "Night Bloom", "price": 87, "img": "images/men10.jpeg" },
+    { "name": "Urban Musk", "price": 86, "img": "images/men11.jpeg" },
+    { "name": "Sandal Rush", "price": 94, "img": "images/men12.jpeg" }
+  ],
+  "women": [
+    { "name": "Floral Whisper", "price": 78, "img": "images/women1.webp" },
+    { "name": "Golden Glow", "price": 95, "img": "images/women2.jpeg" },
+    { "name": "Amber Rose", "price": 82, "img": "images/women3.jpeg" },
+    { "name": "Lily Bloom", "price": 79, "img": "images/women4.jpeg" },
+    { "name": "Peach Blossom", "price": 85, "img": "images/women5.jpeg" },
+    { "name": "Jasmine Dream", "price": 88, "img": "images/women6.webp" },
+    { "name": "Vanilla Kiss", "price": 83, "img": "images/women7.jpeg" },
+    { "name": "Coconut Veil", "price": 87, "img": "images/women8.jpeg" },
+    { "name": "Cherry Bloom", "price": 86, "img": "images/women9.jpeg" },
+    { "name": "Silk Petals", "price": 91, "img": "images/women10.jpeg" },
+    { "name": "Dusk Meadow", "price": 93, "img": "images/women11.jpeg" },
+    { "name": "Soft Mirage", "price": 90, "img": "images/women12.jpeg" }
+  ],
+  "unisex": [
+    { "name": "Mystic Oud", "price": 110, "img": "images/unisex1.webp" },
+    { "name": "Velvet Sky", "price": 99, "img": "images/unisex2.webp" },
+    { "name": "Citrus Grove", "price": 89, "img": "images/unisex3.webp" },
+    { "name": "Amber Drift", "price": 94, "img": "images/unisex4.jpeg" },
+    { "name": "Forest Mist", "price": 86, "img": "images/unisex5.jpeg" },
+    { "name": "Whisper Wood", "price": 88, "img": "images/unisex6.jpeg" },
+    { "name": "Pure Musk", "price": 90, "img": "images/unisex7.webp" },
+    { "name": "Saffron Bliss", "price": 92, "img": "images/unisex8.webp" },
+    { "name": "Golden Horizon", "price": 95, "img": "images/unisex9.jpeg" },
+    { "name": "Silken Sandal", "price": 98, "img": "images/unisex10.jpeg" },
+    { "name": "Frost Ember", "price": 91, "img": "images/unisex11.jpeg" },
+    { "name": "Moondust", "price": 89, "img": "images/unisex12.webp" }
+  ],
+  "children": [
+    { "name": "Bubble Berry", "price": 45, "img": "images/children1.webp" },
+    { "name": "Cotton Candy", "price": 49, "img": "images/children2.jpg" },
+    { "name": "Tiny Vanilla", "price": 42, "img": "images/children3.jpg" },
+    { "name": "Rainbow Drops", "price": 46, "img": "images/children4.webp" },
+    { "name": "Candy Cloud", "price": 44, "img": "images/children5.jpeg" },
+    { "name": "Toffee Splash", "price": 47, "img": "images/children6.jpg" },
+    { "name": "Lemon Fizz", "price": 43, "img": "images/children7.jpeg" },
+    { "name": "Magic Pop", "price": 45, "img": "images/children8.jpeg" },
+    { "name": "Fairy Mist", "price": 48, "img": "images/children9.jpeg" },
+    { "name": "Berry Wink", "price": 46, "img": "images/children10.jpeg" },
+    { "name": "Blue Bubble", "price": 44, "img": "images/children11.jpeg" },
+    { "name": "Vanilla Star", "price": 47, "img": "images/children12.jpeg" }
+  ]
+}

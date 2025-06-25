@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Aura de Luxe</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --primary: #e2b4a5;
+      --secondary: #2c2c2c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #fffaf0, #ffe4e1);
+      animation: backgroundFade 15s ease infinite;
+    }
+
+    @keyframes backgroundFade {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: var(--secondary);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Parisienne', cursive;
+      font-size: 2.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .categories {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .product-grid-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cart-product {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 90%;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .cart-product img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .cart-product h3 {
+      margin: 0 0 5px;
+      font-size: 1.2em;
+    }
+
+    .cart-product p {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
+    .add-to-cart {
+      background-color: var(--primary);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+    }
+
+    .add-to-cart:hover {
+      background-color: var(--secondary);
+    }
+
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Aura de Luxe</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login/Sign Up</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="categories">
+    <h2>Your Cart</h2>
+    <div class="product-grid-wrapper">
+      <form action="payment.html" method="GET">
+        <div class="product-grid">
+
+          <div class="cart-product">
+            <img src="images/perfume2.jpg" alt="Floral Dream">
+            <div class="cart-info">
+              <h3>Floral Dream</h3>
+              <p>$69.99</p>
+              <button class="add-to-cart" type="button">Remove</button>
+            </div>
+          </div>
+
+          <div class="cart-product">
+            <img src="images/perfume3.jpg" alt="Ocean Mist">
+            <div class="cart-info">
+              <h3>Ocean Mist</h3>
+              <p>$54.99</p>
+              <button class="add-to-cart" type="button">Remove</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top: 30px;">
+          <button type="submit" class="add-to-cart" style="font-size: 1.1rem; padding: 12px 25px;">
+            Proceed to Checkout
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aura de Luxe. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
